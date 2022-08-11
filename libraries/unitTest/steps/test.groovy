@@ -1,5 +1,6 @@
 void call(){
     stage("Testing:Perform the unit tests"){
-        println "Testing from mvn library"
+                echo 'Testing Petclinic Application'
+                bat 'mvn test'
     }
 }
