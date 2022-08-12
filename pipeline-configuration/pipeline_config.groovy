@@ -1,5 +1,8 @@
 libraries{
     maven
+    {
+        mavenID="maven"
+    }
     unitTest
     docker
 }
