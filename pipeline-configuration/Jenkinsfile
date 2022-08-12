@@ -1,1 +1,3 @@
-continuous_integration()
+on_commit{
+  continuous_integration()
+}

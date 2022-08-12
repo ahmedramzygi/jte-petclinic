@@ -1,4 +1,7 @@
 libraries{
+ github{
+     source_type = "github"
+  }
     maven
     {
         mavenID="maven"
