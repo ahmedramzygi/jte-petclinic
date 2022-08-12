@@ -6,18 +6,15 @@ libraries{
     unitTest
     docker
 }
-// steps{
-//         unit_test{
-//         stage = "Unit Test"
-//         image = "maven"
-//         command = "mvn -v"
-//     }
-// }
+steps{
+    build
+    {
+    maven.run(["clean", "install"], profiles: ["integration-test"])
+    }
+}
 stages{
     continuous_integration{
         build
-        test
-        build_docker
     }
 }
 
