@@ -1,5 +1,3 @@
-
-@Library('sdp')_
 libraries{
   sdp{
     images{
