@@ -8,4 +8,3 @@ void call(){
             // bat 'docker-compose push'   
      }
 }
-}
