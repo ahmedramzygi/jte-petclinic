@@ -3,8 +3,6 @@ libraries{
     {
         mavenID="maven"
     }
-    unitTest
-    docker
 }
 steps{
     build
