@@ -7,7 +7,7 @@ libraries{
 steps{
     build
     {
-    maven.run(["clean", "install"])
+    println "running as ${stepContext.name}!"
     }
 }
 stages{
