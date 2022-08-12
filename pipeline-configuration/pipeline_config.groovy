@@ -1,17 +1,11 @@
 libraries{
-  sdp{
-    images{
-      registry = "https://docker.pkg.github.com" 
-      repository = "boozallen/sdp-images" 
-      cred = "github" 
-    }
+   maven {
+    mavenId = "maven"
   }
- maven
 }
 steps{
-    build
-    {
-    println "running from maven!"
+    build{
+maven.run(["clean", "install"], profiles: ["integration-test"])
     }
 }
 stages{
