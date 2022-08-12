@@ -1,5 +1,5 @@
 void call(){
     stage("Maven: Build"){
-        echo "building maven jar from jte"        
+        echo "building jar from jte"        
     }
 }
