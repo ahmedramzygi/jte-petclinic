@@ -1,16 +1,13 @@
 libraries{
-   maven {
-    mavenId = "maven"
-  }
-}
-steps{
-    build{
-maven.run(["clean", "install"], profiles: ["integration-test"])
-    }
+    maven
+    unitTest
+    docker
 }
 stages{
     continuous_integration{
         build
+        test
+        build_docker
     }
 }
 
