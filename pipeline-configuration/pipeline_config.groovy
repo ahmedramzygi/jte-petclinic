@@ -10,7 +10,7 @@ libraries{
 steps{
     build
     {
-    maven.run(["clean", "install"])
+    run(["clean", "install"])
     }
 }
 stages{
