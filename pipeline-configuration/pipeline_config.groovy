@@ -7,7 +7,7 @@ libraries{
 steps{
     build
     {
-    println "running as ${stepContext.name}!"
+    println "running from maven build!"
     }
 }
 stages{
