@@ -1,7 +1,5 @@
 libraries{
- github{
-     source_type = "github"
-  }
+    
     maven
     {
         mavenID="maven"
@@ -10,7 +8,7 @@ libraries{
 steps{
     build
     {
-    run(["clean", "install"])
+    maven.run(["clean", "install"], profiles: ["integration-test"])
     }
 }
 stages{
