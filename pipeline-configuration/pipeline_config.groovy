@@ -1,15 +1,17 @@
 libraries{
     maven
-    unitTest
-    docker
+    // unitTest
     sonarqube
+    docker
+    
 }
 stages{
     continuous_integration{
         build
-        test
-        build_docker
+        // test
         static_code_analysis
+        build_docker
+        
     }
 }
 
