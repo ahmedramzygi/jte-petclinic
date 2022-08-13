@@ -1,5 +1,6 @@
 void call(){
     stage("SonarQube: Static Code Analysis"){
-        println "static code analysis from the sonarqube library"
-    }
+        withSonarQubeEnv(installationName: 'sq1') { 
+          bat './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+        }    }
 }
