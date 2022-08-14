@@ -1,4 +1,4 @@
-import static io.wcm.devops.jenkins.pipeline.utils.ConfigConstants.*
+
 
 libraries{
     // github
@@ -8,12 +8,7 @@ libraries{
     docker
     
 }
-stages{
- checkoutScm( 
-        (SCM) : [
-        (SCM_URL) :  "https://github.com/ahmedramzygi/petclinic" ,
-        ]
-    )    
+stages{  
     continuous_integration{
 
         build
