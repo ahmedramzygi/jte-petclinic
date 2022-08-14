@@ -1,10 +1,8 @@
-import static io.wcm.devops.jenkins.pipeline.utils.ConfigConstants.*
+
 
 void call(){
     stage("Checkout: Checkout the code from github ")
-    {
-        node{
-            
+    {      
             checkoutScm( 
                 (SCM) : [
                     (SCM_URL) : "https://github.com/ahmedramzygi/petclinic",
@@ -16,5 +14,3 @@ void call(){
             // bat 'git clone https://github.com/ahmedramzygi/petclinic C:/ProgramData/Jenkins/.jenkins/workspace/jte-petclinic-task_main'
             }
      }
-}
-
