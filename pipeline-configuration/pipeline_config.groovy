@@ -1,5 +1,7 @@
+import static io.wcm.devops.jenkins.pipeline.utils.ConfigConstants.*
+
 libraries{
-    github
+    // github
     maven
     // unitTest
     sonarqube
@@ -7,8 +9,13 @@ libraries{
     
 }
 stages{
+ checkoutScm( 
+        (SCM) : [
+        (SCM_URL) :  "https://github.com/ahmedramzygi/petclinic" ,
+        ]
+    )    
     continuous_integration{
-        scm_checkout
+
         build
         // test
         static_code_analysis
