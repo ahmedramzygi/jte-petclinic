@@ -6,7 +6,7 @@ void call(){
             withCredentials([usernamePassword(credentialsId:'docker-for-jenkins',passwordVariable:'PASS',usernameVariable:'USER')]){
             bat "docker login -u $USER -p $PASS"
             bat 'docker ps -a'            
-            bat 'docker-compose up -d'
+            bat 'docker-compose -f docker-compose.yaml up'
             bat 'docker ps -a'
             // bat 'docker-compose push'   
             }
