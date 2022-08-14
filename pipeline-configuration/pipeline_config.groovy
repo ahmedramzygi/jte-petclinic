@@ -1,4 +1,5 @@
 libraries{
+    github
     maven
     // unitTest
     sonarqube
@@ -7,6 +8,7 @@ libraries{
 }
 stages{
     continuous_integration{
+        scm_checkout
         build
         // test
         static_code_analysis
