@@ -1,4 +1,3 @@
-import static io.wcm.devops.jenkins.pipeline.utils.ConfigConstants.*
 libraries{
     github
     maven

@@ -1,13 +1,16 @@
-
+@Library('utils') import static io.wcm.devops.jenkins.pipeline.utils.ConfigConstants.*
 
 void call(){
     stage("Checkout: Checkout the code from github ")
     {      
+        node{
+        
             checkoutScm( 
                 (SCM) : [
                     (SCM_URL) : "https://github.com/ahmedramzygi/petclinic",
                 ]
             )
+        }
             
             // echo "Checkout the code from github"
             // withCredentials([usernamePassword(credentialsId:'github-for-jenkins',passwordVariable:'PASS',usernameVariable:'USER')]){
