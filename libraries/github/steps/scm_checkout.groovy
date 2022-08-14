@@ -10,3 +10,4 @@ void call(){
             bat 'git clone https://github.com/ahmedramzygi/petclinic C:/ProgramData/Jenkins/.jenkins/workspace/jte-petclinic-task_main'
             }
      }
+}

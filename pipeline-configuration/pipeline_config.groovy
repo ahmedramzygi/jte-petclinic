@@ -1,16 +1,14 @@
-
-
 libraries{
-    // github
+    github
     maven
     // unitTest
     sonarqube
     docker
     
 }
-stages{  
+stages{
     continuous_integration{
-
+        scm_checkout
         build
         // test
         static_code_analysis
