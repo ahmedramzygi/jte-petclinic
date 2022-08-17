@@ -3,6 +3,7 @@ libraries{
     maven
     sonarqube
     docker
+    smoke
     
 }
 stages{
@@ -11,6 +12,7 @@ stages{
         build
         static_code_analysis
         build_docker
+        smoke_test
         
     }
 }
