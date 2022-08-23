@@ -1,18 +1,18 @@
 libraries{
-    github
-    maven
+    // github
+    // maven
    // sonarqube
-    docker
+   // docker
     ansible
     // smoke
     
 }
 stages{
     continuous_integration{
-        scm_checkout
-        build
+        // scm_checkout
+        // build
       //  static_code_analysis
-        build_docker
+        // build_docker
         ansible
         // smoke_test
         
