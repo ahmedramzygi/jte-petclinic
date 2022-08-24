@@ -2,7 +2,7 @@ libraries{
     github
     maven
     // sonarqube
-    // docker
+    docker
     // ansible
     // smoke
     
@@ -12,7 +12,7 @@ stages{
         scm_checkout
         build
         //  static_code_analysis
-        // build_docker
+        build_docker
         //ansible
         // smoke_test
         
