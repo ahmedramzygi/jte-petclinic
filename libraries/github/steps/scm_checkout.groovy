@@ -2,7 +2,7 @@
 
 void call(){
     agent{
-         label 'windows'
+         label 'master'
     }
     stage("SCM Checkout: Checkout the code from github ")
     {      node{
