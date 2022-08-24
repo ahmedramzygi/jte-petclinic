@@ -4,10 +4,7 @@ void call(){
     {
         node('maven-agent'){
         echo "building jar from jte"     
-            sh 'cd .'
-            sh'find'
-            sh'find . -maxdepth 3'
-            sh 'mvn -v'
+            sh 'mvn clean install'
            
     }
     }
