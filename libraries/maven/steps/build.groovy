@@ -1,8 +1,12 @@
 void call(){
-    stage("Maven: Build the jar file"){
+    agent{
+         label 'maven-agent'
+    }
+    stage("Maven: Build the jar file")
+    {
         echo "building jar from jte"     
         node{
-            bat'mvn clean install'
+            sh 'mvn clean install'
         }   
     }
 }
