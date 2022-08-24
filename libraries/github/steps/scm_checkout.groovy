@@ -1,11 +1,9 @@
 
 
 void call(){
-    agent{
-         label 'master'
-    }
+
     stage("SCM Checkout: Checkout the code from github ")
-    {      node{
+    {      node ('master'){
             echo "Checkout the code from github"
             checkout scm
             }
