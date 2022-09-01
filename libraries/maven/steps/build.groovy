@@ -4,7 +4,7 @@ void call(){
     {
         node('maven-agent'){
         echo "building jar from jte"    
-            sh 'scm checkout'
+            checkout scm
             sh 'mvn clean install'
             stash includes: 'target/*.jar', name: 'targetfiles'
            
