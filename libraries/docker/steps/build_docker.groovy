@@ -2,6 +2,7 @@
 void call(){
     stage("Docker: Build docker image ")
          {
+             node{
             echo "building the docker image from jte..."
             unstash 'targetfiles'
             withCredentials([usernamePassword(credentialsId:'docker-hub',passwordVariable:'PASS',usernameVariable:'USER')]){
@@ -11,7 +12,7 @@ void call(){
             }
                  }
          
-}
+         }}
 
 
 
