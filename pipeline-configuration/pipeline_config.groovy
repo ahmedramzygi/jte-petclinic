@@ -1,7 +1,7 @@
 
 libraries{
   github{
-     source_type = "github"
+     source_type = "https://github.com/boozallen/sdp-libraries/tree/main/libraries"
   }
     maven
     sonarqube
@@ -12,7 +12,7 @@ libraries{
 }
 stages{
     continuous_integration{
-        scm_checkout
+        on_pull_request
         build
         static_code_analysis
       //  build_docker
