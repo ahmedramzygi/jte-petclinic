@@ -1,20 +1,25 @@
+
 libraries{
-    // github
-    // maven
-   // sonarqube
-   // docker
-    ansible
+    github
+    maven
+    sonarqube
+    //docker
+    // ansible
     // smoke
     
 }
 stages{
     continuous_integration{
-        // scm_checkout
-        // build
-      //  static_code_analysis
-        // build_docker
-        ansible
+        scm_checkout
+        build
+        static_code_analysis
+      //  build_docker
+        //ansible
         // smoke_test
         
     }
+}
+keywords{
+  develop = ~/^[Dd]ev(elop|elopment|eloper|)$/
+  main = ~/^[Mm](ain|aster)$/
 }
