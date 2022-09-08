@@ -4,7 +4,7 @@ void call(){
 
     stage("SCM Checkout: Checkout the code from github ")
     {  
-        node(label 'maven-agent'){
+        node{
             echo "Checkout the code from github"
             checkout scm
             }
