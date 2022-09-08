@@ -10,7 +10,7 @@ libraries{
 }
 stages{
     continuous_integration{
-        on_pull_request
+        scm_checkout
         build
         static_code_analysis
       //  build_docker
