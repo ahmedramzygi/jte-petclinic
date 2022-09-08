@@ -1,3 +1,5 @@
 
+on_pull_request to: main, {
+  continuous_integration()
+}
 
-continuous_integration()
