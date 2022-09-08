@@ -2,7 +2,7 @@ void call(){
 
     stage("Maven: Build the jar file")
     {
-        node{
+        node(label 'maven-agent'){
         echo "building jar from jte"    
             checkout scm
             bat 'mvn clean install'
