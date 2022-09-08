@@ -1,8 +1,6 @@
 
 libraries{
-  github{
-     source_type = "https://github.com/boozallen/sdp-libraries/"
-  }
+    github
     maven
     sonarqube
     //docker
