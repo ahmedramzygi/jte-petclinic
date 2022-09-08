@@ -1,7 +1,7 @@
 
 libraries{
   github{
-     source_type = "https://github.com/boozallen/sdp-libraries"
+     source_type = "https://github.com/boozallen/sdp-libraries/"
   }
     maven
     sonarqube
