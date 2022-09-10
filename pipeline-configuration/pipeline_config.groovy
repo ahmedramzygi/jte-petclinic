@@ -1,6 +1,9 @@
 
 libraries{
-    github
+  github{
+     source_type = "github"
+  }
+
     maven
     sonarqube
     //docker
@@ -10,7 +13,7 @@ libraries{
 }
 stages{
     continuous_integration{
-        scm_checkout
+       // scm_checkout
         build
         static_code_analysis
       //  build_docker
