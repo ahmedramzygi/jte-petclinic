@@ -1,6 +1,8 @@
 
 libraries{
-    git
+    git{
+          github
+    }
     maven
     sonarqube
     //docker
