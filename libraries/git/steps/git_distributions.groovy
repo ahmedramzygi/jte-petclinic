@@ -67,14 +67,20 @@ void init_env(){
     return
 }
 
+// def fetch(){
+//   def stepName = env.GIT_LIBRARY_DISTRUBITION
+
+//   if(jteVersion.lessThanOrEqualTo("2.0.4")){
+//     return getBinding().getStep(stepName)
+//   } else {
+//     return this.getStepFromCollector(stepName)
+//   }
+// }
 def fetch(){
   def stepName = env.GIT_LIBRARY_DISTRUBITION
+  println(stepName)
+  return this.getStepFromCollector(stepName)
 
-  if(jteVersion.lessThanOrEqualTo("2.0.4")){
-    return getBinding().getStep(stepName)
-  } else {
-    return this.getStepFromCollector(stepName)
-  }
 }
 
 @NonCPS
