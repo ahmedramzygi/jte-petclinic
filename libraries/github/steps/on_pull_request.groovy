@@ -10,7 +10,10 @@ import org.kohsuke.github.GitHub
 void call(Map args = [:], body){
   println "Before the 1st if "
   // do nothing if not pr
-  if (!env.GIT_BUILD_CAUSE.equals("pr")) 
+  if (!env.GIT_BUILD_CAUSE.equals("pr")) {
+    println('entered the first condition')
+    return
+  }
     return
   println "After the 1st if "  
   def source_branch = get_source_branch()
