@@ -1,12 +1,17 @@
+/*
+  Copyright © 2020 Booz Allen Hamilton. All Rights Reserved.
+  This software package is licensed under the Booz Allen Public License. The license can be found in the License file or at http://boozallen.github.io/licenses/bapl
+*/
+package libraries.git.steps
 
-package libraries.github
-
+// Import code required for GitHub functions
 import org.kohsuke.github.GitHub
 
-void call(){
-
-}
-
+/*
+    returns the name of the source branch in a Pull Request
+    for example, in a MR from feature to development, the source branch
+    would be "feature"
+*/
 def get_source_branch(){
 
   def cred_id = env.GIT_CREDENTIAL_ID
