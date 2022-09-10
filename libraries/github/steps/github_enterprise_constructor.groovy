@@ -5,12 +5,11 @@
 
 package libraries.github
 
-@Init
+// @Init
 void call(context) {
-  node('maven-agent'){
-      //unstash "workspace"
-      
-      println('github E constructor')
+  node{
+      unstash "workspace"
+
       env.GIT_URL = scm.getUserRemoteConfigs()[0].getUrl()
       env.GIT_CREDENTIAL_ID = scm.getUserRemoteConfigs()[0].credentialsId.toString()
       def parts = env.GIT_URL.split("/")
