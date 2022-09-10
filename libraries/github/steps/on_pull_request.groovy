@@ -14,7 +14,7 @@ void call(Map args = [:], body){
     println('entered the first condition')
     return
   }
-    return
+    
   println "After the 1st if "  
   def source_branch = get_source_branch()
   def target_branch = env.CHANGE_TARGET
