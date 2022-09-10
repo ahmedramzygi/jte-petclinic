@@ -9,7 +9,12 @@ void call(Map args = [:], body){
 
   // do nothing if not pr
   if (!(env.GIT_BUILD_CAUSE in ["pr"]))
+  {
+    println('Entered the 1st condition')
+    println(env.GIT_BUILD_CAUSE)
     return
+  }
+    
 
   def source_branch = git_distributions.fetch().get_source_branch()
   def target_branch = env.CHANGE_TARGET
