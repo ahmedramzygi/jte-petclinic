@@ -12,7 +12,7 @@ void call(Map args = [:], body){
   {
     println('Entered the 1st condition')
     println(env.GIT_BUILD_CAUSE)
-    return
+    // return
   }
     
 
