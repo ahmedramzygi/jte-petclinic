@@ -7,9 +7,9 @@ package libraries.github
 
 @Init
 void call(context) {
-  node{
+  node('maven-agent'){
       //unstash "workspace"
-      label 'maven-agent'
+      
       println('github E constructor')
       env.GIT_URL = scm.getUserRemoteConfigs()[0].getUrl()
       env.GIT_CREDENTIAL_ID = scm.getUserRemoteConfigs()[0].credentialsId.toString()
