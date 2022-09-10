@@ -12,6 +12,7 @@ void call(Map args = [:], body){
   // do nothing if not pr
   if (!env.GIT_BUILD_CAUSE.equals("pr")) {
     println('entered the first condition')
+    println(env.GIT_BUILD_CAUSE)
     return
   }
     
