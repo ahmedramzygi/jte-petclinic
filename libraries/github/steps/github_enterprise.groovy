@@ -1,27 +1,24 @@
-
 package libraries.github
 
 import org.kohsuke.github.GitHub
 
 void call(){
-  println('github step')
-
-
+  println('github entrprise step')
 }
 
 def get_source_branch(){
-  node{
-    label'maven-agent'
-  
-  println('github source branch step')
+
+  String ghUrl = "${env.GIT_URL.split("/")[0..-3].join("/")}/api/v3"
+  def repo
+  def org
+
   def cred_id = env.GIT_CREDENTIAL_ID
 
   withCredentials([usernamePassword(credentialsId: cred_id, passwordVariable: 'PAT', usernameVariable: 'USER')]) {
-      return GitHub.connectUsingOAuth(PAT).
-              getRepository("${env.ORG_NAME}/${env.REPO_NAME}")
+      return GitHub.connectToEnterprise(ghUrl, PAT).getRepository("${env.ORG_NAME}/${env.REPO_NAME}")
               .getPullRequest(env.CHANGE_ID.toInteger())
               .getHead()
               .getRef()
   }
-}
+
 }
