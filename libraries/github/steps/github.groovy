@@ -4,16 +4,11 @@ package libraries.github
 import org.kohsuke.github.GitHub
 
 void call(){
-  println('github step')
-
 
 }
 
 def get_source_branch(){
-  node{
-    label'maven-agent'
-  
-  println('github source branch step')
+
   def cred_id = env.GIT_CREDENTIAL_ID
 
   withCredentials([usernamePassword(credentialsId: cred_id, passwordVariable: 'PAT', usernameVariable: 'USER')]) {
@@ -23,5 +18,4 @@ def get_source_branch(){
               .getHead()
               .getRef()
   }
-}
 }

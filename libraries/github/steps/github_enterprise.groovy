@@ -3,7 +3,7 @@ package libraries.github
 import org.kohsuke.github.GitHub
 
 void call(){
-  println('github entrprise step')
+
 }
 
 def get_source_branch(){
