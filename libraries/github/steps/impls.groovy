@@ -1,5 +1,6 @@
+package libraries.github
 
-void call(){
+def call(){
     List options = ['github', 'github_enterprise']
     String impl = config.source_type
 
