@@ -1,11 +1,10 @@
-// node
-// {
-// label:'maven-agent'
+
+
 on_pull_request to: main, {
   continuous_integration()
 }
 
-// }
+
 
 
 // continuous_integration()
