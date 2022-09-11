@@ -1,10 +1,11 @@
 void call(){
-    stage("Docker: Build docker image from CI  ")
+    stage("Smoke Test : Run the smoke test from CI ")
          {
-             node('docker-agent'){
-            echo "building the docker image using docker agent"
+             {
+            println "building the docker image using docker agent"
 
             }
                  }
          
          }
+         
