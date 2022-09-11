@@ -27,6 +27,6 @@ application_environments{
   prod
 }
 keywords{
-  develop = ~/^[Dd]ev(elop|elopment|eloper|)$/
+  dev = ~/^[Dd]ev(elop|elopment|eloper|)$/
   main = ~/^[Mm](ain|aster)$/
 }

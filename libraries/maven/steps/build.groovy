@@ -16,7 +16,7 @@ void call(){
         stage("Maven: Build the jar file")
     {
         node('maven-agent'){
-        echo "building the jar from CI stage "    
+        echo "building maven jar's from CI stage "    
         }
 
         

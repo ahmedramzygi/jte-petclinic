@@ -20,7 +20,7 @@
 void call(){
     stage("Docker: Build docker image from CI  ")
          {
-             node('docker-agent'){
+             node('docker-slave'){
             echo "building the docker image using docker agent"
 
             }

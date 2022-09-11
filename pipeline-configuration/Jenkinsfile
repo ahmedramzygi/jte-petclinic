@@ -5,12 +5,12 @@ on_commit{
 on_pull_request to: main, {
   continuous_integration()
 }
-on_pull_request to: develop, {
+on_pull_request to: dev, {
   continuous_integration()
   deploy_to dev
   deploy_to staging
 }
-on_merge to: master, from: develop, {
+on_merge to: main, from: dev, {
   deploy_to prod
   smoke_test()
 }
