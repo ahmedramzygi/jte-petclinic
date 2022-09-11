@@ -17,16 +17,25 @@
 
 
 
+// void call(){
+//     stage("Docker: Build docker image from CI  ")
+//          {
+//              node('docker-slave'){
+//             echo "building the docker image using docker agent"
+
+//             }
+//                  }
+         
+//          }
 void call(){
     stage("Docker: Build docker image from CI  ")
          {
-             node('docker-slave'){
-            echo "building the docker image using docker agent"
+            
+            println("building the docker image using docker agent")
 
             }
                  }
          
-         }
-
+         
 
 

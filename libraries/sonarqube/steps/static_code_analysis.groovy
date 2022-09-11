@@ -8,11 +8,19 @@
 //           }
 //     }
 // }
+// void call(){
+//     stage("SonarQube: Static Code Analysis from the CI stage"){
+//       node('maven-agent'){
+//         echo 'Doing the Static Code Analysis from jte by SQ'
+//       }
+//           }
+//     }
+
 void call(){
     stage("SonarQube: Static Code Analysis from the CI stage"){
-      node('maven-agent'){
-        echo 'Doing the Static Code Analysis from jte by SQ'
-      }
+
+        println( 'Doing the Static Code Analysis from jte by SQ')
+      
           }
     }
 
