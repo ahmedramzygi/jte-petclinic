@@ -78,7 +78,7 @@ void init_env(){
 // }
 def fetch(){
   def stepName = env.GIT_LIBRARY_DISTRUBITION
-  println(stepName)
+  println('stepname is ${stepName}')
   return this.getStepFromCollector(stepName)
 
 }
