@@ -15,9 +15,10 @@ import org.kohsuke.github.GitHub
 def get_source_branch(){
 
   def cred_id = env.GIT_CREDENTIAL_ID
+  println(cred_id)
   
 
-  withCredentials([usernamePassword(credentialsId: 'cred_id', passwordVariable: 'PAT', usernameVariable: 'USER')]) {
+  withCredentials([usernamePassword(credentialsId: cred_id, passwordVariable: 'PAT', usernameVariable: 'USER')]) {
       return GitHub.connectUsingOAuth(PAT).
               getRepository("${env.ORG_NAME}/${env.REPO_NAME}")
               .getPullRequest(env.CHANGE_ID.toInteger())
