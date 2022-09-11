@@ -9,7 +9,7 @@ libraries{
     docker
     deploy
     // ansible
-    // smoke
+    smokeTest
     
 }
 stages{
