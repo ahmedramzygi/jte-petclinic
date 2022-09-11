@@ -21,7 +21,6 @@ stages{
 
 }
 application_environments{
-  dev
   staging
   test
   prod
