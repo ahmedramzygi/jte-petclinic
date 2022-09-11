@@ -16,19 +16,15 @@ void call(Map args = [:], body){
   println("source branch is ${source_branch}")
   println("target branch is ${target_branch}")
 
-  // // do nothing in source branch doesn't match
-  // if (args.from)
-  // if (!(source_branch ==~ (~args.from) ))// convert string to regex
-  //   return
+  // do nothing if source branch doesn't match
+  if (args.from)
+  if (!source_branch.collect{ it ==~ args.from}.contains(true))
+    return
 
-  // // do nothing if target branch doesnt match
-  // if (args.to)
-  // if (!(target_branch ==~ (~args.to) ))// convert string to regex
-  // {
-  //   println('doesnt match')
-  //   return
-
-  // }
+  // do nothing if target branch doesnt match
+  if (args.to)
+  if (!(target_branch ==~ args.to))
+    return
 
 
   println "running because of a PR from ${source_branch} to ${target_branch}"
