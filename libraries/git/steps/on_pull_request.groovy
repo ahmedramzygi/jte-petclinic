@@ -13,8 +13,8 @@ void call(Map args = [:], body){
 
   def source_branch = git_distributions.fetch().get_source_branch()
   def target_branch = env.CHANGE_TARGET
-  println('source branch is ${source_branch}')
-  println('target branch is ${target_branch}')
+  println("source branch is ${source_branch}")
+  println("target branch is ${target_branch}")
 
   // do nothing in source branch doesn't match
   if (args.from)
