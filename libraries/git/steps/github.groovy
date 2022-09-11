@@ -18,7 +18,8 @@ def get_source_branch(){
   println(cred_id)
   
 
-  withCredentials([usernamePassword(credentialsId: cred_id, passwordVariable: 'PAT', usernameVariable: 'USER')]) {
+  withCredentials([usernamePassword(credentialsId: cred_id, usernameVariable: 'USER',  passwordVariable: 'PAT')]) {
+      println( USER)
       return GitHub.connectUsingOAuth(PAT).
               getRepository("${env.ORG_NAME}/${env.REPO_NAME}")
               .getPullRequest(env.CHANGE_ID.toInteger())
