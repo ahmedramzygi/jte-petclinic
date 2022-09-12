@@ -20,7 +20,8 @@ stages{
     }
 
 }
-application_environments{
+application_environments{\
+  master
   staging
   development
   test
