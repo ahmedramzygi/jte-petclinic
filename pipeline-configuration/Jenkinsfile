@@ -11,7 +11,7 @@ on_pull_request to: dev, {
 
 on_pull_request to: main, {
   continuous_integration()
-  deploy_to development
+  deploy_to master
 }
 
 
