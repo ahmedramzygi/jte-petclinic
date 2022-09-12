@@ -9,7 +9,7 @@ import hudson.AbortException
 
 @Validate // validate so this runs prior to other @Init steps
 void call(){
-    node('jnlp'){
+    node('maven-agent-2'){
         cleanWs()
         try{
             checkout scm
