@@ -2,23 +2,23 @@
 // on_commit{
 //   continuous_integration()
 // }
-if (env.JOB_NAME.contains('dev')) {
+
 
 on_pull_request to: dev, {
+  
   continuous_integration()
 }
-}
-else if(env.JOB_NAME.contains('main')){
+
 on_pull_request to: main, {
   continuous_integration()
   deploy_to development
 }
+
+
+on_merge to: main, {
+  deploy_to prod
+
 }
-
-// on_merge to: main, {
-//   deploy_to prod
-
-// }
 
 
 
