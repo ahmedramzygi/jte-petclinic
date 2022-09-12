@@ -7,6 +7,10 @@ if (env.JOB_NAME.contains('dev')) {
 on_pull_request to: dev, {
   continuous_integration()
 }
+on_merge to: main, {
+  deploy_to development
+
+}
 }
 else if(env.JOB_NAME.contains('main')){
 on_pull_request to: main, {
