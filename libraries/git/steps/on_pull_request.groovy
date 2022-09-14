@@ -6,7 +6,7 @@
 package libraries.git.steps
 
 void call(Map args = [:], body){
-   def desc = currentBuild.getBuildCauses()
+   def desc = currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')
     println(desc)  
 
   // do nothing if not pr
