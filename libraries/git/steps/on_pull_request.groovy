@@ -6,8 +6,8 @@
 package libraries.git.steps
 
 void call(Map args = [:], body){
-   def userIdCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
-    println(userIdCause)  
+   def desc = currentBuild.getBuildCauses()[0].shortDescription
+    println(desc)  
 
   // do nothing if not pr
   if (!(env.GIT_BUILD_CAUSE in ["pr"]))
