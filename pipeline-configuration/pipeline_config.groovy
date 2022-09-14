@@ -6,10 +6,9 @@ libraries{
     }
     git
     {
-
-          // github{
-            agent='maven-agent'
-          // }
+          agent='maven-agent'
+      
+          github
     }
     maven
     {
