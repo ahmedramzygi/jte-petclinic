@@ -41,7 +41,7 @@ void init_env(){
           println "'workspace' stash not present. Skipping git library environment variable initialization. To change this behavior, ensure the 'sdp' library is loaded"
           return
         }
-      
+
         env.GIT_URL = scm.getUserRemoteConfigs()[0].getUrl()
         env.GIT_CREDENTIAL_ID = scm.getUserRemoteConfigs()[0].credentialsId.toString()
         def parts = env.GIT_URL.split("/")
@@ -52,10 +52,18 @@ void init_env(){
         env.ORG_NAME = parts.getAt(0)
         env.REPO_NAME = parts[1..-1].join("/") - ".git"
         env.GIT_SHA = sh(script: "git rev-parse HEAD", returnStdout: true).trim()
+        userID=currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+        
 
         if (env.CHANGE_TARGET){
             env.GIT_BUILD_CAUSE = "pr"
-        } else {
+        }
+        else if(userID !='[]')
+        {
+          env.GIT_BUILD_CAUSE="demand"
+        }
+        
+         else {
             env.GIT_BUILD_CAUSE = sh (
               script: 'git rev-list HEAD --parents -1 | wc -w', // will have 2 shas if commit, 3 or more if merge
               returnStdout: true
