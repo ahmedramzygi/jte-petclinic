@@ -6,7 +6,7 @@
 package libraries.git.steps
 
 void call(Map args = [:], body){
-   def desc = currentBuild.getBuildCauses()[0].shortDescription
+   def desc = currentBuild.getBuildCauses()
     println(desc)  
 
   // do nothing if not pr
