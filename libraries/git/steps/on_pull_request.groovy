@@ -7,13 +7,10 @@ package libraries.git.steps
 
 void call(Map args = [:], body){
  // started by commit
-branch=currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')
-// started by timer
-timer=currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')
+
 // started by user
 userID=currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
-println(branch)
-println(timer)
+
 println(userID)
   
 
