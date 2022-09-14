@@ -23,6 +23,7 @@ libraries{
     {
       agent='docker-slave'
     }
+    deploy
 
     
 }
