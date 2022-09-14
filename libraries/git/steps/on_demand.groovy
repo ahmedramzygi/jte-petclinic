@@ -12,4 +12,28 @@ void call(Map args = [:], body){
 // put the build cause inside the git.buildcause variable
 // trigger the body 
 
+  
+
+  // do nothing if not pr
+  if (!(env.GIT_BUILD_CAUSE in ["demand"]))
+    return
+
+  def source_branch = git_distributions.fetch().get_source_branch()
+//   def target_branch = env.CHANGE_TARGET
+  println("source branch is ${source_branch}")
+//   println("target branch is ${target_branch}")
+
+  // do nothing if source branch doesn't match
+  if (args.from)
+  if (!source_branch.collect{ it ==~ args.from}.contains(true))
+    return
+
+  // do nothing if target branch doesnt match
+  if (args.to)
+  if (!(target_branch ==~ args.to))
+    return
+
+
+  println "running on demand from ${source_branch}"
+  body()
 }
