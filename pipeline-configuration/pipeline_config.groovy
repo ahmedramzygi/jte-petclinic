@@ -5,11 +5,11 @@ libraries{
     //   agent='maven-agent-2'
     // }
     git
-    //{
+    {
           github
 
           //agent='maven-agent'
-    //}
+    }
     maven
     {
       agent='maven-agent-2'
