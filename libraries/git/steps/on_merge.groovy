@@ -75,7 +75,7 @@ String get_merged_from(){
 }
 
 String get_feature_branch_sha(){
-  node("${agent}"){
+  node('maven-agent-2'){
     unstash "workspace"
     sh(
       script: "git rev-parse \$(git --no-pager log -n1 | grep Merge: | awk '{print \$3}')",
