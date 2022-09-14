@@ -6,12 +6,16 @@
 package libraries.git.steps
 
 void call(Map args = [:], body){
- def causes = currentBuild.getBuildCauses()
-  for(cause in causes) {
-    println(cause)
-    }
-   def desc = currentBuild.getBuildCauses()
-    println(desc)  
+ // started by commit
+branch=currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')
+// started by timer
+timer=currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')
+// started by user
+userID=currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+println(branch)
+println(timer)
+println(userID)
+  
 
   // do nothing if not pr
   if (!(env.GIT_BUILD_CAUSE in ["pr"]))
