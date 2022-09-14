@@ -8,10 +8,7 @@ package libraries.git.steps
 void call(Map args = [:], body){
  // started by commit
 
-// started by user
-userID=currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
 
-println(userID)
   
 
   // do nothing if not pr
