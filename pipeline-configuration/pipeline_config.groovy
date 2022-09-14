@@ -1,9 +1,9 @@
 
 libraries{
     sdp
-    // {
-    //   agent='maven-agent-2'
-    // }
+    {
+      agent='maven-agent-2'
+    }
     git
     {
           github
@@ -11,9 +11,9 @@ libraries{
           //agent='maven-agent'
     }
     maven
-    {
-      agent='maven-agent-2'
-    }
+    // {
+    //   agent='maven-agent-2'
+    // }
     
     sonarqube
     // {

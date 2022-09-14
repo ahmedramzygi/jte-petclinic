@@ -14,7 +14,7 @@ void call(){
     PipelineConfigurationObject aggregated = new PipelineConfigurationObject(null)
     aggregated.config = pipelineConfig
     
-    node('maven-agent-2'){
+    node("${config.agent}"){
         writeFile text: (new PipelineConfigurationDsl(null)).serialize(aggregated), file: "pipeline_config.groovy"
         archiveArtifacts "pipeline_config.groovy"
         cleanWs()
