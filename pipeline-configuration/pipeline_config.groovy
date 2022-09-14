@@ -1,26 +1,40 @@
 
 libraries{
     sdp
-    git{
+    // {
+    //   agent='maven-agent-2'
+    // }
+    git
+    //{
           github
-    }
+
+          //agent='maven-agent'
+    //}
     maven
+    {
+      agent='maven-agent-2'
+    }
+    
     sonarqube
+    // {
+    //   agent='maven-agent-2'
+    // }
     docker
-    deploy
-    // ansible
+    // {
+    //   agent='docker-slave'
+    // }
 
     
 }
 stages{
     continuous_integration{
-        build
+        build_maven
         static_code_analysis
         build_docker
     }
 
 }
-application_environments{\
+application_environments{
   master
   staging
   development
