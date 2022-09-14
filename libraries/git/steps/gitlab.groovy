@@ -12,7 +12,7 @@ package libraries.git.steps
     would be "feature"
 */
 def get_source_branch(){
-  node{
+  node("${config.agent}"){
     def gitlabUrl = "${env.GIT_URL.split("/")[0..-3].join("/")}"
     withCredentials([
         usernamePassword(
