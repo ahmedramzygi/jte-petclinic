@@ -8,21 +8,21 @@ libraries{
     {
           github
 
-          //agent='maven-agent'
+          agent='maven-agent'
     }
     maven
-    // {
-    //   agent='maven-agent-2'
-    // }
+    {
+      agent='maven-agent-2'
+    }
     
     sonarqube
-    // {
-    //   agent='maven-agent-2'
-    // }
+    {
+      agent='maven-agent-2'
+    }
     docker
-    // {
-    //   agent='docker-slave'
-    // }
+    {
+      agent='docker-slave'
+    }
 
     
 }
