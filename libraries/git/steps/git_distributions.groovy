@@ -35,7 +35,7 @@ void call(){
 
 // Initialize Git configuration of env vars
 void init_env(){
-    node("${agent}"){
+    node('maven-agent'){
         try{ unstash "workspace" }
         catch(ignored) { 
           println "'workspace' stash not present. Skipping git library environment variable initialization. To change this behavior, ensure the 'sdp' library is loaded"
