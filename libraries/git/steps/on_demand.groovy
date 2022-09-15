@@ -13,8 +13,9 @@ void call(Map args = [:], body){
   if (!(env.GIT_BUILD_CAUSE in ["demand"]))
     return
   // Get the source job where the trigger is fired
-  def source_job = env.JOB_NAME
+  def source_job = env.JOB_BASE_NAME
   println("The job name is from ${source_job}")
+
 
   if (args.from){
   println(args.from)
