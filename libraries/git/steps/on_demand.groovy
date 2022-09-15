@@ -19,13 +19,34 @@ void call(Map args = [:], body){
 
   if (args.from){
   println(args.from)
-  if (!source_job.collect{ it ==~ args.from}.contains(true))
-    println('doesnt read the from args')
-    return  
-  }
-
-
+  if( source_job == 'main')
+  {
   println "running on demand from ${source_job}"
-  // After the on_demand logic finishes the body of stages will start
   body()
+  return
+  }
+  else if( source_job =='dev')
+  {
+  println "running on demand from ${source_job}"
+  body()
+  return   
+
+  }
+  else if( source_job !='feature')
+  {
+  println "running on demand from ${source_job}"
+  body()
+  return
+
+  }  
+  // if (!source_job.collect{ it ==~ args.from}.contains(true))
+  //   println('doesnt read the from args')
+  //   return  
+  // }
+
+
+  // println "running on demand from ${source_job}"
+  // // After the on_demand logic finishes the body of stages will start
+  // body()
+}
 }
