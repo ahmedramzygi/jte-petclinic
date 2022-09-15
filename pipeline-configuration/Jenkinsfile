@@ -15,9 +15,14 @@ on_pull_request to: main, {
   deploy_to master
 }
 
-on_demand{
+on_demand from: dev,{
   continuous_integration()
   deploy_to test
+
+}
+on_demand from: main,{
+  continuous_integration()
+  deploy_to master
 
 }
 on_merge to: main, {
