@@ -43,6 +43,6 @@ application_environments{
   prod
 }
 keywords{
-  dev = ~/dev/
-  main = ~/main/
+  dev = "dev"
+  main = "main"
 }
