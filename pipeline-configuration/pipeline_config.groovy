@@ -41,7 +41,7 @@ application_environments{
   development
   test
   prod
-  feature
+  featureBranches
 }
 keywords{
   dev = "dev"
