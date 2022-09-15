@@ -50,4 +50,3 @@ void call(Map args = [:], body){
   // // After the on_demand logic finishes the body of stages will start
   // body()
 }
-}
