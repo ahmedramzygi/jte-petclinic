@@ -24,6 +24,11 @@ on_demand from: main,{
   deploy_to master
 
 }
+on_demand from: feature,{
+  continuous_integration()
+  deploy_to feature
+
+}
 on_merge to: main, {
   deploy_to prod
   deploy_to master
