@@ -16,6 +16,14 @@ void call(Map args = [:], body){
   def source_job = env.JOB_NAME
   println("The job name is from ${source_job}")
 
+  if (args.from){
+  println(args.from)
+  if (!source_job.collect{ it ==~ args.from}.contains(true))
+    println('doesnt read the from args')
+    return  
+  }
+
+
   println "running on demand from ${source_job}"
   // After the on_demand logic finishes the body of stages will start
   body()

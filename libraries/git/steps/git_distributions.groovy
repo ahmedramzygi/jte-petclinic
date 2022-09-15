@@ -58,12 +58,12 @@ void init_env(){
         if (env.CHANGE_TARGET){
             env.GIT_BUILD_CAUSE = "pr"
         }
-        else if(userID !='[]')
+        else if(userID !='[]') // If the build trigger is from git/github it wull return an empty arr[] otherwise it is triggered manually by the user in jenkins
         {
           env.GIT_BUILD_CAUSE="demand"
         }
         
-         else {
+        else {
             env.GIT_BUILD_CAUSE = sh (
               script: 'git rev-list HEAD --parents -1 | wc -w', // will have 2 shas if commit, 3 or more if merge
               returnStdout: true
