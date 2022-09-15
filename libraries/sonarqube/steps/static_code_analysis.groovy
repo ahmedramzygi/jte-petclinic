@@ -18,14 +18,14 @@
 
 void call(){
     stage("SonarQube: Static Code Analysis from the CI stage"){
-      //node("${config.agent}")
+      // node("${config.agent}")
+      node('master')
       {
 
-        echo  'Doing the Static Code Analysis from jte by SQ'
+        println( 'Doing the Static Code Analysis from jte by SQ')
       }
 
       
-        //  }
+          }
     }
 
-}
