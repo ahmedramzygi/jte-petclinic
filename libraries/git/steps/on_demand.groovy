@@ -20,20 +20,20 @@ void call(Map args = [:], body){
   if (args.from){
   println(args.from)
   
-  if( source_job.equals("main"))
+  if( source_job.equals(${args.from}))
   {
   println "running on demand from ${source_job}"
   body()
   return
   }
-  else if( source_job.equals("dev"))
+  else if( source_job.equals(${args.from}))
   {
   println "running on demand from ${source_job}"
   body()
   return   
 
   }
-  else if( source_job.equals("feature"))
+  else if( source_job.equals(${args.from}))
   {
   println "running on demand from ${source_job}"
   body()

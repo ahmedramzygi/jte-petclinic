@@ -43,6 +43,6 @@ application_environments{
   prod
 }
 keywords{
-  dev = ~/^[Dd]ev(elop|elopment|eloper|)$/
-  main = ~/^[Mm](ain|aster)$/
+  dev = ~/dev/
+  main = ~/main/
 }
