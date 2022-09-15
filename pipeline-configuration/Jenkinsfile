@@ -7,7 +7,6 @@
 on_pull_request to: dev, {
   
   continuous_integration()
-  deploy_to development
 }
 
 on_pull_request to: main, {
@@ -27,6 +26,7 @@ on_demand from: main,{
 }
 on_merge to: main, {
   deploy_to prod
+  deploy_to master
 
 }
 

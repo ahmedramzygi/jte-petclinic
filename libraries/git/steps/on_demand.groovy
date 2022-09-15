@@ -17,12 +17,12 @@ void call(Map args = [:], body){
   // println("The job name is from ${source_job}")
 
 
-  if (args.from){
-  // println(args.from)
-  if (!source_job.collect{ it ==~ args.from}.contains(true))
-    println('doesnt read the from args')
-    return  
-  }  
+  // if (args.from){
+  // // println(args.from)
+  // if (!source_job.collect{ it ==~ args.from}.contains(true))
+  //   println('doesnt read the from args')
+  //   return  
+  // }  
   if( source_job.equals(args.from))
   {
   println "running on demand from ${source_job}"
