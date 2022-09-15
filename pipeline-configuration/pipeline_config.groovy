@@ -6,7 +6,7 @@ libraries{
     }
     git
     {
-          //agent='maven-agent-2'
+          agent='maven-agent-2'
       
           github
     }
@@ -45,4 +45,5 @@ application_environments{
 keywords{
   dev = "dev"
   main = "main"
+  feature="feature"
 }

@@ -14,12 +14,15 @@ void call(Map args = [:], body){
     return
   // Get the source job where the trigger is fired
   def source_job = env.JOB_BASE_NAME
-  println("The job name is from ${source_job}")
+  // println("The job name is from ${source_job}")
 
 
   if (args.from){
-  println(args.from)
-  
+  // println(args.from)
+  if (!source_job.collect{ it ==~ args.from}.contains(true))
+    println('doesnt read the from args')
+    return  
+  }  
   if( source_job.equals(args.from))
   {
   println "running on demand from ${source_job}"
@@ -40,10 +43,7 @@ void call(Map args = [:], body){
   return
 
   }  
-  // if (!source_job.collect{ it ==~ args.from}.contains(true))
-  //   println('doesnt read the from args')
-  //   return  
-  // }
+
 
 
   // println "running on demand from ${source_job}"

@@ -8,5 +8,5 @@ fields{
         github
         github_enterprise
     }
-    
+    agent
 }
