@@ -21,7 +21,7 @@ void call(){
       //node("${config.agent}")
       {
 
-        println( 'Doing the Static Code Analysis from jte by SQ')
+        echo  'Doing the Static Code Analysis from jte by SQ'
       }
 
       

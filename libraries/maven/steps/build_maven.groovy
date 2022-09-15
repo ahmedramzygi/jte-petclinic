@@ -5,7 +5,7 @@ void call(){
     {
      //  node("${config.agent}")
        {
-                println( "building maven jar's from CI stage "    )
+                echo "building maven jar's from CI stage "
 
        }
     //}

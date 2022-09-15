@@ -31,7 +31,7 @@ void call(){
     stage("Docker: Build docker image from CI  ")
          {
           //node("${config.agent}"){
-     println("building the docker image using docker agent")
+     echo "building the docker image using docker agent"
 
           //}
             
