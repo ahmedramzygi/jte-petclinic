@@ -53,18 +53,18 @@ void init_env(){
         env.REPO_NAME = parts[1..-1].join("/") - ".git"
         env.GIT_SHA = sh(script: "git rev-parse HEAD", returnStdout: true).trim()
         userID=currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
-        
 
-        if (env.CHANGE_TARGET){
-            env.GIT_BUILD_CAUSE = "pr"
-        }
-        
-        else if(!(userID.equals('[]'))) // If the build trigger is from git/github it will return an empty arr[] otherwise it is triggered manually by the user in jenkins
+        if(!(userID.equals('[]'))) // If the build trigger is from git/github it will return an empty arr[] otherwise it is triggered manually by the user in jenkins
         {
           println(userID)
           env.GIT_BUILD_CAUSE="demand"
         }
-        
+                
+
+        else if (env.CHANGE_TARGET){
+            env.GIT_BUILD_CAUSE = "pr"
+        }
+
         else {
             env.GIT_BUILD_CAUSE = sh (
               script: 'git rev-list HEAD --parents -1 | wc -w', // will have 2 shas if commit, 3 or more if merge
