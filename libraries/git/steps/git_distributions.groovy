@@ -58,7 +58,8 @@ void init_env(){
         if (env.CHANGE_TARGET){
             env.GIT_BUILD_CAUSE = "pr"
         }
-        else if(!(userID.contains('[]')) // If the build trigger is from git/github it will return an empty arr[] otherwise it is triggered manually by the user in jenkins
+        
+        else if(userID.equals('[]')) // If the build trigger is from git/github it will return an empty arr[] otherwise it is triggered manually by the user in jenkins
         {
           println(userID)
           env.GIT_BUILD_CAUSE="demand"
