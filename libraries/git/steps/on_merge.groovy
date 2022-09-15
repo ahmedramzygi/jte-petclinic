@@ -38,7 +38,7 @@ void call(Map args = [:], body){
 }
 
 String get_merged_from(){
-  node("${config.agent}"){
+  node('maven-agent-2'){
     unstash "workspace"
     // update remote for git name-rev to properly work
     def remote = env.GIT_URL

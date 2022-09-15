@@ -6,17 +6,12 @@
 package libraries.git.steps
 
 void call(Map args = [:], body){
- // started by commit
-
-
-  
-
   // do nothing if not pr
   if (!(env.GIT_BUILD_CAUSE in ["pr"]))
     return
 
-  def source_branch = git_distributions.fetch().get_source_branch()
-  def target_branch = env.CHANGE_TARGET
+  def source_branch = git_distributions.fetch().get_source_branch() // Get the source branch of the pull request
+  def target_branch = env.CHANGE_TARGET //Get the target branch where the pr is requested at
   println("source branch is ${source_branch}")
   println("target branch is ${target_branch}")
 

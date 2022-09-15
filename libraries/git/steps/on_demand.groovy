@@ -7,24 +7,16 @@ package libraries.git.steps
 
 void call(Map args = [:], body){
 
-// get notified by the build
-// get the src branch 
-// put the build cause inside the git.buildcause variable
-// trigger the body 
-
-  
+ 
 
   // do nothing if not on demand
   if (!(env.GIT_BUILD_CAUSE in ["demand"]))
     return
-
+  // Get the source job where the trigger is fired
   def source_job = env.JOB_NAME
   println("The job name is from ${source_job}")
-  
-  if (args.from)
-  if (!source_job.collect{ it ==~ args.from}.contains(true))
-    return  
 
   println "running on demand from ${source_job}"
+  // After the on_demand logic finishes the body of stages will start
   body()
 }
