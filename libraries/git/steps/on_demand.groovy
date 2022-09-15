@@ -14,7 +14,7 @@ void call(Map args = [:], body){
     return
   // Get the source job where the trigger is fired
   def source_job = env.JOB_BASE_NAME
-  // println("The job name is from ${source_job}")
+  println("The job name is from ${source_job}")
 
 
   // if (args.from){
@@ -43,6 +43,9 @@ void call(Map args = [:], body){
   return
 
   }  
+  else{
+    println("")
+  }
 
 
 
